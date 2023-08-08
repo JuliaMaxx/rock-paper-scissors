@@ -5,16 +5,17 @@ function getComputerChoice() {
     return options[randomNum];
 }
 
-let playerSelection;
-while(true) {
-    playerSelection = prompt("Your move: ").toLowerCase();
-    if(options.includes(playerSelection)) {
-        break; 
+function getPlayerChoice(){
+    while(true) {
+        playerSelection = prompt("Your move: ").toLowerCase();
+        if(options.includes(playerSelection)){ 
+            return playerSelection; 
+        }
+        else {
+            continue;
+        } 
     }
-    else {
-        continue;
-    } 
 }
 
 
-console.log(getComputerChoice(), playerSelection)
+console.log(getComputerChoice(), getPlayerChoice())
