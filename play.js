@@ -53,4 +53,34 @@ function playRound(playerMove, compMove) {
     }
 }
 
-console.log(playGame(getPlayerChoice(), getComputerChoice()))
+function game() {
+    let roundResult;
+    let playerScore = 0;
+    let compScore = 0;
+    for(let i = 0; i < 5; i++){
+        roundResult = playRound(getPlayerChoice(),getComputerChoice())
+        console.log(roundResult);
+        if (roundResult.includes('You win')){
+            ++playerScore;
+        }
+        else if(roundResult.includes('Computer wins')){
+            ++compScore;
+        }
+        console.log(`Score: You:${playerScore} --- Computer:${compScore}`);
+    }
+    if(playerScore > compScore){
+        console.log(`Congrats you won ${playerScore} to ${compScore}`);
+    }
+    else if(compScore > playerScore){
+        console.log(`Computer won ${compScore} to ${playerScore}`);
+    }
+    else{
+        console.log('I\'s a tie this time!');
+    }
+    if(confirm("Play again?")){
+        console.log('')
+        game();
+    }
+}
+
+game()
