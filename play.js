@@ -7,7 +7,11 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     while(true) {
-        playerSelection = prompt("Your move: ").toLowerCase();
+        let playerSelection = prompt("Your move: ")
+        if (playerSelection === null){
+            throw new Error("User terminated the game");
+        }
+        playerSelection = playerSelection.toLowerCase();
         if(options.includes(playerSelection)){ 
             return playerSelection; 
         }
@@ -57,29 +61,34 @@ function game() {
     let roundResult;
     let playerScore = 0;
     let compScore = 0;
-    for(let i = 0; i < 5; i++){
-        roundResult = playRound(getPlayerChoice(),getComputerChoice())
-        console.log(roundResult);
-        if (roundResult.includes('You win')){
-            ++playerScore;
+    try{
+        for(let i = 0; i < 5; i++){
+            roundResult = playRound(getPlayerChoice(),getComputerChoice())
+            console.log(roundResult);
+            if (roundResult.includes('You win')){
+                ++playerScore;
+            }
+            else if(roundResult.includes('Computer wins')){
+                ++compScore;
+            }
+            console.log(`Score: You:${playerScore} --- Computer:${compScore}`);
         }
-        else if(roundResult.includes('Computer wins')){
-            ++compScore;
+        if(playerScore > compScore){
+            console.log(`Congrats you won ${playerScore} to ${compScore}`);
         }
-        console.log(`Score: You:${playerScore} --- Computer:${compScore}`);
+        else if(compScore > playerScore){
+            console.log(`Computer won ${compScore} to ${playerScore}`);
+        }
+        else{
+            console.log('I\'s a tie this time!');
+        }
+        if(confirm("Play again?")){
+            console.log('')
+            game();
+        }
     }
-    if(playerScore > compScore){
-        console.log(`Congrats you won ${playerScore} to ${compScore}`);
-    }
-    else if(compScore > playerScore){
-        console.log(`Computer won ${compScore} to ${playerScore}`);
-    }
-    else{
-        console.log('I\'s a tie this time!');
-    }
-    if(confirm("Play again?")){
-        console.log('')
-        game();
+    catch(error){
+        console.info('You terminated the game');
     }
 }
 
