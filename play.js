@@ -17,7 +17,7 @@ function getPlayerChoice() {
     }
 }
 
-function playGame(playerMove, compMove) {
+function playRound(playerMove, compMove) {
 
     const titleCompMove = compMove[0].toUpperCase() + compMove.slice(1);
 
@@ -42,7 +42,7 @@ function playGame(playerMove, compMove) {
             return `You win! Paper beats ${titleCompMove}`
         }
     }
-    
+
     if(playerMove === 'scissors'){
         if(compMove === 'rock'){
             return 'Computer wins! Rock beats Scissors';
