@@ -52,56 +52,39 @@ function playRound(playerMove, compMove) {
 
 const moves = document.querySelectorAll('.option');
 const result = document.getElementById('result');
+const score = document.getElementById('score');
+
+// initialize both scores to 0
+let playerScore = 0;
+let compScore = 0;
+
+
 moves.forEach((move) => {
     move.addEventListener('click', () => {
         result.innerText = playRound(move.dataset.option, getComputerChoice());
-    });
-});
 
-// play 5 rounds of the game
-function game() {
-    let roundResult;
-    // initialize both scores to 0
-    let playerScore = 0;
-    let compScore = 0;
-    try{
-        // loop five times to represent five rounds
-        for(let i = 0; i < 5; i++){
-            // get the result of one round
-            roundResult = playRound(getPlayerChoice(),getComputerChoice())
-            // display the result
-            console.log(roundResult);
+        // record the score
+        if (result.innerText.includes('You win')){
+            ++playerScore;
+        }
+        else if(result.innerText.includes('Computer wins')){
+            ++compScore;
+        }
 
-            // record the score
-            if (roundResult.includes('You win')){
-                ++playerScore;
+        score.innerText = `Score: You:${playerScore} --- Computer:${compScore}`;
+        
+        if(playerScore === 5 || compScore === 5) {
+            // display the winner(if there is one) of five rounds
+            if(playerScore > compScore){
+                score.innerText = `Congrats you won ${playerScore} to ${compScore}`;
             }
-            else if(roundResult.includes('Computer wins')){
-                ++compScore;
+            else if(compScore > playerScore){
+                score.innerText = `Computer won ${compScore} to ${playerScore}`;
             }
-            console.log(`Score: You:${playerScore} --- Computer:${compScore}`);
+            else{
+                score.innerText = 'I\'s a tie this time!';
+            }
         }
         
-        // display the winner(if there is one) of five rounds
-        if(playerScore > compScore){
-            console.log(`Congrats you won ${playerScore} to ${compScore}`);
-        }
-        else if(compScore > playerScore){
-            console.log(`Computer won ${compScore} to ${playerScore}`);
-        }
-        else{
-            console.log('I\'s a tie this time!');
-        }
-
-        // offer user to play again
-        if(confirm("Play again?")){
-            console.log('')
-            game();
-        }
-    }
-    // if cancel was pressed in the prompt
-    catch(error){
-        console.info('You terminated the game');
-    }
-}
-
+    });
+});
