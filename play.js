@@ -7,25 +7,8 @@ function getComputerChoice() {
     return options[randomNum];
 }
 
-// prompt the user for the move until they input a valid one
 function getPlayerChoice() {
-    while(true){
-        let playerSelection = prompt("Your move: ");
-        // throw an error if 'cancel' is pressed to catch it later
-        if (playerSelection === null){
-            throw new Error("User terminated the game");
-        }
-        // handle user input case-insensitively
-        playerSelection = playerSelection.toLowerCase();
-
-        // make sure that the move is valid
-        if(options.includes(playerSelection)){ 
-            return playerSelection; 
-        }
-        else {
-            continue;
-        } 
-    }
+   
 }
 
 // play one round of the game
