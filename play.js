@@ -7,9 +7,7 @@ function getComputerChoice() {
     return options[randomNum];
 }
 
-function getPlayerChoice() {
-   
-}
+
 
 // play one round of the game
 function playRound(playerMove, compMove) {
@@ -51,6 +49,14 @@ function playRound(playerMove, compMove) {
         }
     }
 }
+
+const moves = document.querySelectorAll('.option');
+const result = document.getElementById('result');
+moves.forEach((move) => {
+    move.addEventListener('click', () => {
+        result.innerText = playRound(move.dataset.option, getComputerChoice());
+    });
+});
 
 // play 5 rounds of the game
 function game() {
@@ -99,4 +105,3 @@ function game() {
     }
 }
 
-game()
