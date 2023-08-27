@@ -84,7 +84,7 @@ moves.forEach((move) => {
             else{
                 score.innerText = 'I\'s a tie this time!';
             }
+            moves.forEach(move => move.disabled=true)
         }
-        
     });
 });
