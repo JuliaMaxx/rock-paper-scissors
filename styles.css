@@ -1,6 +1,10 @@
 /* general */
 body {
-    height: 90vh;
+    text-align: center;
+}
+
+#main {
+    height: 80vh;
     display: flex;
     gap: 50px;
     flex-direction: column;
