@@ -50,13 +50,24 @@ function playRound(playerMove, compMove) {
     }
 }
 
+const playAgainButton = document.getElementById('play-again');
 const moves = document.querySelectorAll('.option');
 const result = document.getElementById('result');
 const score = document.getElementById('score');
 
+
 // initialize both scores to 0
 let playerScore = 0;
 let compScore = 0;
+
+playAgainButton.addEventListener('click', () => {
+    moves.forEach(move => move.disabled=false);
+    playerScore = 0;
+    compScore = 0;
+    result.innerText = '';
+    score.innerText = `Score: You:${playerScore} --- Computer:${compScore}`;
+    playAgainButton.style.display = 'none';
+});
 
 
 moves.forEach((move) => {
@@ -85,7 +96,7 @@ moves.forEach((move) => {
                 score.innerText = 'I\'s a tie this time!';
             }
             moves.forEach(move => move.disabled=true)
-            document.getElementById('play-again').style.display = 'inline';
+            playAgainButton.style.display = 'inline';
         }
     });
 });
