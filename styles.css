@@ -1,6 +1,7 @@
 /* general */
 body {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 #main {
@@ -10,6 +11,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* heading */
+.heading {
+    font-family: "Major Mono Display", sans-serif;
 }
 
 /* option buttons */
