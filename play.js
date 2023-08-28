@@ -1,5 +1,5 @@
 // array of possible moves
-const options = ['rock', 'paper', 'scissors'];
+const options = ['Rock', 'Paper', 'Scissors'];
 
 // get random move from the options array
 function getComputerChoice() {
@@ -9,41 +9,39 @@ function getComputerChoice() {
 
 // play one round of the game
 function playRound(playerMove, compMove) {
-    // title case computer move to display it later
-    const titleCompMove = compMove[0].toUpperCase() + compMove.slice(1);
 
     // moves are the same - it must be a tie
     if(playerMove === compMove){
-        return 'It\'s a tie!'
+        return `It\'s a tie! ${playerMove} ties ${compMove}`
     }
     // player's move is rock
-    if(playerMove === 'rock'){
+    if(playerMove === 'Rock'){
         // the only thing that beats rock is paper
-        if(compMove === 'paper'){
+        if(compMove === 'Paper'){
             return 'Computer wins! Paper beats Rock';
         }
         else{
-            return `You win! Rock beats ${titleCompMove}`
+            return `You win! Rock beats ${compMove}`
         }
     }
     // player's move is paper
-    if(playerMove === 'paper'){
+    if(playerMove === 'Paper'){
         // the only thing that beats paper is scissors
-        if(compMove === 'scissors'){
+        if(compMove === 'Scissors'){
             return 'Computer wins! Scissors beat Paper';
         }
         else{
-            return `You win! Paper beats ${titleCompMove}`
+            return `You win! Paper beats ${compMove}`
         }
     }
     // player's move is scissors
-    if(playerMove === 'scissors'){
+    if(playerMove === 'Scissors'){
         // the only thing that beats scissors is rock
-        if(compMove === 'rock'){
+        if(compMove === 'Rock'){
             return 'Computer wins! Rock beats Scissors';
         }
         else{
-            return `You win! Scissors beat ${titleCompMove}`
+            return `You win! Scissors beat ${compMove}`
         }
     }
 }
@@ -52,6 +50,7 @@ const playAgainButton = document.getElementById('play-again');
 const moves = document.querySelectorAll('.option');
 const result = document.getElementById('result');
 const score = document.getElementById('score');
+const roundExplanation = document.getElementById('explanation');
 
 // initialize both scores to 0
 let playerScore = 0;
@@ -62,15 +61,18 @@ playAgainButton.addEventListener('click', () => {
     moves.forEach(move => move.disabled=false);
     playerScore = 0;
     compScore = 0;
-    result.innerText = '';
+    result.innerText = 'Choose your weapon';
     score.innerText = `Score: You:${playerScore} --- Computer:${compScore}`;
+    roundExplanation.innerText = 'First to score 5 points wins the game';
     playAgainButton.style.display = 'none';
 });
 
 moves.forEach((move) => {
     move.addEventListener('click', () => {
         // display the result
-        result.innerText = playRound(move.dataset.option, getComputerChoice());
+        const text = playRound(move.dataset.option, getComputerChoice()).split('!')
+        result.innerText = text[0] + '!';
+        roundExplanation.innerText = text[1]
 
         // record the score
         if (result.innerText.includes('You win')) {
