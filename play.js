@@ -7,8 +7,6 @@ function getComputerChoice() {
     return options[randomNum];
 }
 
-
-
 // play one round of the game
 function playRound(playerMove, compMove) {
     // title case computer move to display it later
@@ -55,12 +53,12 @@ const moves = document.querySelectorAll('.option');
 const result = document.getElementById('result');
 const score = document.getElementById('score');
 
-
 // initialize both scores to 0
 let playerScore = 0;
 let compScore = 0;
 
 playAgainButton.addEventListener('click', () => {
+    // reset everything to the initial values
     moves.forEach(move => move.disabled=false);
     playerScore = 0;
     compScore = 0;
@@ -69,9 +67,9 @@ playAgainButton.addEventListener('click', () => {
     playAgainButton.style.display = 'none';
 });
 
-
 moves.forEach((move) => {
     move.addEventListener('click', () => {
+        // display the result
         result.innerText = playRound(move.dataset.option, getComputerChoice());
 
         // record the score
@@ -82,6 +80,7 @@ moves.forEach((move) => {
             ++compScore;
         }
 
+        // display the score
         score.innerText = `Score: You:${playerScore} --- Computer:${compScore}`;
         
         if(playerScore === 5 || compScore === 5) {
@@ -95,7 +94,9 @@ moves.forEach((move) => {
             else{
                 score.innerText = 'I\'s a tie this time!';
             }
+            // disable the buttons
             moves.forEach(move => move.disabled=true)
+            // ask the user to play again
             playAgainButton.style.display = 'inline';
         }
     });
