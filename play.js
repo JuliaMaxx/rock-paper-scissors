@@ -64,10 +64,10 @@ moves.forEach((move) => {
         result.innerText = playRound(move.dataset.option, getComputerChoice());
 
         // record the score
-        if (result.innerText.includes('You win')){
+        if (result.innerText.includes('You win')) {
             ++playerScore;
         }
-        else if(result.innerText.includes('Computer wins')){
+        else if(result.innerText.includes('Computer wins')) {
             ++compScore;
         }
 
@@ -85,6 +85,7 @@ moves.forEach((move) => {
                 score.innerText = 'I\'s a tie this time!';
             }
             moves.forEach(move => move.disabled=true)
+            document.getElementById('play-again').style.display = 'inline';
         }
     });
 });
