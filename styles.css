@@ -40,7 +40,7 @@ h4 {
 
 /* play again modal */
 #play-again {
-    display: none;
+    opacity: 0%;
     position: absolute;
     align-self: center;
     background-color: black;
@@ -49,6 +49,7 @@ h4 {
     font-size: 30px;
     border-radius: 20px;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 #play-again-button {
     margin-top: 30px;

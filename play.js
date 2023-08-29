@@ -75,7 +75,7 @@ playAgainButton.addEventListener('click', () => {
     result.innerText = 'Choose your weapon';
     playerScoreDisplay.innerText = `You: 0`;
     compScoreDisplay.innerText = `Computer: 0`;
-    playAgainButton.style.display = 'none';
+    playAgainButton.style.opacity = '0%';
     main.style.opacity = '100%'
 });
 
@@ -121,8 +121,8 @@ moves.forEach((move) => {
             // disable the buttons
             moves.forEach(move => move.disabled=true)
             // ask the user to play again
-            playAgainButton.style.display = 'inline';
             main.style.opacity = '60%';
+            playAgainButton.style.opacity = '100%';
         }
     });
 });
