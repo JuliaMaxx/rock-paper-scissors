@@ -38,7 +38,7 @@ h4 {
 }
 
 /* play again button */
-button#play-again {
+#play-again {
     display: none;
     position: absolute;
     align-self: center;

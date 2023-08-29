@@ -59,6 +59,7 @@ const roundInfo = document.getElementById('round-info');
 const playerMoveEmojiDisplay = document.getElementById('player-move-emoji');
 const compMoveEmojiDisplay = document.getElementById('comp-move-emoji');
 const main = document.getElementById('main');
+const playAgainText = document.getElementById('play-again-text');
 
 // initialize both scores to 0
 let playerScore = 0;
@@ -93,9 +94,11 @@ moves.forEach((move) => {
 
         // record the score
         if (result.innerText.includes('You win')) {
+            playAgainText.innerText = "You won! Good gob!";
             ++playerScore;
         }
         else if(result.innerText.includes('Computer wins')) {
+            playAgainText.innerText = "Lost this time unfortunately :("
             ++compScore;
         }
 
