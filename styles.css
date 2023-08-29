@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 #main {
@@ -37,12 +38,35 @@ h4 {
     font-size: 100px;
 }
 
-/* play again button */
+/* play again modal */
 #play-again {
     display: none;
     position: absolute;
     align-self: center;
+    background-color: black;
+    color: white;
+    padding: 60px;
+    font-size: 30px;
+    border-radius: 20px;
+    font-weight: 500;
 }
+#play-again-button {
+    margin-top: 30px;
+    padding: 10px 30px;
+    background-color: white;
+    border: unset;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    border: dashed 2px white;
+    transition: all 0.3s ease;
+
+}
+#play-again-button:hover {
+    background-color: rgb(118, 119, 119);
+    color:rgb(229, 229, 229);
+}
+
 
 /* scores */
 #score {

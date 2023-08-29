@@ -98,7 +98,7 @@ moves.forEach((move) => {
             ++playerScore;
         }
         else if(result.innerText.includes('Computer wins')) {
-            playAgainText.innerText = "Lost this time unfortunately :("
+            playAgainText.innerText = "Lost this time :("
             ++compScore;
         }
 
