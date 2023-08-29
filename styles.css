@@ -2,6 +2,9 @@
 body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #main {
@@ -16,6 +19,7 @@ body {
 /* headings */
 .heading {
     font-family: "Major Mono Display", sans-serif;
+    font-size: 40px;
 }
 
 h4 {
@@ -36,6 +40,8 @@ h4 {
 /* play again button */
 button#play-again {
     display: none;
+    position: absolute;
+    align-self: center;
 }
 
 /* scores */

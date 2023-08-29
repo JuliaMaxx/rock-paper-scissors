@@ -58,6 +58,7 @@ const roundExplanation = document.getElementById('explanation');
 const roundInfo = document.getElementById('round-info');
 const playerMoveEmojiDisplay = document.getElementById('player-move-emoji');
 const compMoveEmojiDisplay = document.getElementById('comp-move-emoji');
+const main = document.getElementById('main');
 
 // initialize both scores to 0
 let playerScore = 0;
@@ -74,6 +75,7 @@ playAgainButton.addEventListener('click', () => {
     playerScoreDisplay.innerText = `You: 0`;
     compScoreDisplay.innerText = `Computer: 0`;
     playAgainButton.style.display = 'none';
+    main.style.opacity = '100%'
 });
 
 moves.forEach((move) => {
@@ -102,7 +104,7 @@ moves.forEach((move) => {
         compScoreDisplay.innerText = `Computer: ${compScore}`;
         
         if(playerScore === 5 || compScore === 5) {
-            result.style.fontSize = '35px';
+            result.style.fontSize = '30px';
             // display the winner(if there is one) of five rounds
             if(playerScore > compScore){
                 result.innerText = `Congrats you won ${playerScore} to ${compScore}`;
@@ -117,6 +119,7 @@ moves.forEach((move) => {
             moves.forEach(move => move.disabled=true)
             // ask the user to play again
             playAgainButton.style.display = 'inline';
+            main.style.opacity = '60%';
         }
     });
 });
