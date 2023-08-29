@@ -1,6 +1,9 @@
 // array of possible moves
 const options = ['Rock', 'Paper', 'Scissors'];
 
+// emojis that represent moves
+const emojis = {'Rock': '🤘', 'Paper':'✋', 'Scissors': '✌️'};
+
 // get random move from the options array
 function getComputerChoice() {
     const randomNum = Math.floor((Math.random() * 3));
@@ -53,6 +56,8 @@ const playerScoreDisplay = document.getElementById('player-score');
 const compScoreDisplay = document.getElementById('comp-score');
 const roundExplanation = document.getElementById('explanation');
 const roundInfo = document.getElementById('round-info');
+const playerMoveEmojiDisplay = document.getElementById('player-move-emoji');
+const compMoveEmojiDisplay = document.getElementById('comp-move-emoji');
 
 // initialize both scores to 0
 let playerScore = 0;
@@ -77,6 +82,12 @@ moves.forEach((move) => {
         const text = playRound(move.dataset.option, getComputerChoice()).split('!')
         result.innerText = text[0] + '!';
         roundExplanation.innerText = text[1]
+
+        const roundMoves = text[1].split(' ')
+        const playerMoveEmoji = emojis[roundMoves[1]];
+        const compMoveEmoji = emojis[roundMoves[3]];
+        playerMoveEmojiDisplay.innerText = playerMoveEmoji;
+        compMoveEmojiDisplay.innerText = compMoveEmoji;
 
         // record the score
         if (result.innerText.includes('You win')) {
