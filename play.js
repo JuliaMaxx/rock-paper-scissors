@@ -21,7 +21,7 @@ function playRound(playerMove, compMove) {
     if(playerMove === 'Rock'){
         // the only thing that beats rock is paper
         if(compMove === 'Paper'){
-            return 'Computer wins! Paper beats Rock';
+            return 'Computer wins! Rock is beaten by Paper';
         }
         else{
             return `You win! Rock beats ${compMove}`
@@ -31,7 +31,7 @@ function playRound(playerMove, compMove) {
     if(playerMove === 'Paper'){
         // the only thing that beats paper is scissors
         if(compMove === 'Scissors'){
-            return 'Computer wins! Scissors beat Paper';
+            return 'Computer wins! Paper is beaten by Scissors';
         }
         else{
             return `You win! Paper beats ${compMove}`
@@ -41,7 +41,7 @@ function playRound(playerMove, compMove) {
     if(playerMove === 'Scissors'){
         // the only thing that beats scissors is rock
         if(compMove === 'Rock'){
-            return 'Computer wins! Rock beats Scissors';
+            return 'Computer wins! Scissors are beaten by Rock';
         }
         else{
             return `You win! Scissors beat ${compMove}`
@@ -85,7 +85,7 @@ moves.forEach((move) => {
 
         const roundMoves = text[1].split(' ')
         const playerMoveEmoji = emojis[roundMoves[1]];
-        const compMoveEmoji = emojis[roundMoves[3]];
+        const compMoveEmoji = emojis[roundMoves[roundMoves.length - 1]];
         playerMoveEmojiDisplay.innerText = playerMoveEmoji;
         compMoveEmojiDisplay.innerText = compMoveEmoji;
 
