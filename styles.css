@@ -13,9 +13,13 @@ body {
     align-items: center;
 }
 
-/* heading */
+/* headings */
 .heading {
     font-family: "Major Mono Display", sans-serif;
+}
+
+h4 {
+    font-size: 26px;
 }
 
 /* option buttons */
@@ -32,4 +36,10 @@ body {
 /* play again button */
 button#play-again {
     display: none;
+}
+
+/* scores */
+#score {
+    display:flex;
+    gap: 30px;
 }

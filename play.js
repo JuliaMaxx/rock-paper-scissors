@@ -49,8 +49,10 @@ function playRound(playerMove, compMove) {
 const playAgainButton = document.getElementById('play-again');
 const moves = document.querySelectorAll('.option');
 const result = document.getElementById('result');
-const score = document.getElementById('score');
+const playerScoreDisplay = document.getElementById('player-score');
+const compScoreDisplay = document.getElementById('comp-score');
 const roundExplanation = document.getElementById('explanation');
+const roundInfo = document.getElementById('round-info');
 
 // initialize both scores to 0
 let playerScore = 0;
@@ -61,9 +63,11 @@ playAgainButton.addEventListener('click', () => {
     moves.forEach(move => move.disabled=false);
     playerScore = 0;
     compScore = 0;
-    result.innerText = 'Choose your weapon';
-    score.innerText = `Score: You:${playerScore} --- Computer:${compScore}`;
     roundExplanation.innerText = 'First to score 5 points wins the game';
+    result.style.fontSize = '26px';
+    result.innerText = 'Choose your weapon';
+    playerScoreDisplay.innerText = `You: 0`;
+    compScoreDisplay.innerText = `Computer: 0`;
     playAgainButton.style.display = 'none';
 });
 
@@ -83,18 +87,20 @@ moves.forEach((move) => {
         }
 
         // display the score
-        score.innerText = `Score: You:${playerScore} --- Computer:${compScore}`;
+        playerScoreDisplay.innerText = `You: ${playerScore}`;
+        compScoreDisplay.innerText = `Computer: ${compScore}`;
         
         if(playerScore === 5 || compScore === 5) {
+            result.style.fontSize = '35px';
             // display the winner(if there is one) of five rounds
             if(playerScore > compScore){
-                score.innerText = `Congrats you won ${playerScore} to ${compScore}`;
+                result.innerText = `Congrats you won ${playerScore} to ${compScore}`;
             }
             else if(compScore > playerScore){
-                score.innerText = `Computer won ${compScore} to ${playerScore}`;
+                result.innerText = `Computer won ${compScore} to ${playerScore}`;
             }
             else{
-                score.innerText = 'I\'s a tie this time!';
+                result.innerText = 'I\'s a tie this time!';
             }
             // disable the buttons
             moves.forEach(move => move.disabled=true)
