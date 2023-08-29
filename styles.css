@@ -25,12 +25,12 @@ h4 {
 /* option buttons */
 #buttons {
     display: flex;
-    gap: 15px;
+    gap: 25px;
 }
 .option {
-    width: 100px;
-    height: 100px;
-    font-size: 50px;
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
 }
 
 /* play again button */
@@ -41,5 +41,11 @@ button#play-again {
 /* scores */
 #score {
     display:flex;
-    gap: 30px;
+    gap: 100px;
+}
+
+
+/* emojis */
+.emoji {
+    font-size: 100px;
 }
