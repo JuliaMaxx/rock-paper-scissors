@@ -130,19 +130,19 @@ h4 {
     right: 140px;
     transition: all 0.1s;
 }
-.light.theme {
+.light-btn.theme {
     font-size: 80px;
     top: 5px;
 }
-.light.theme:hover {
+.light-btn.theme:hover {
     font-size: 90px;
 }
-.dark.theme {
+.dark-btn.theme {
     display:none;
     font-size: 60px;
     top: 15px;
 }
-.dark.theme:hover {
+.dark-btn.theme:hover {
     font-size: 70px;
 }
 

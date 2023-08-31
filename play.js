@@ -62,8 +62,8 @@ const main = document.getElementById('main');
 const playAgainText = document.getElementById('play-again-text');
 const compAddPoint = document.querySelector('.comp.add-point');
 const playerAddPoint = document.querySelector('.player.add-point');
-const themeLight = document.querySelector('.light.theme');
-const themeDark = document.querySelector('.dark.theme');
+const themeLight = document.querySelector('.light-btn.theme');
+const themeDark = document.querySelector('.dark-btn.theme');
 
 function lightToDark() {
     themeLight.style.display = 'none';
