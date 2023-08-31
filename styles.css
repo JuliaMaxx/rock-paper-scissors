@@ -44,6 +44,15 @@ h4 {
     width: 150px;
     height: 150px;
     font-size: 100px;
+    border-radius: 20px;
+    background-color: black;
+    color:white;
+    border: 3px dashed white;
+    transition: all 0.1s;
+}
+.option:hover {
+    background-color: rgb(118, 119, 119);
+    color: black;
 }
 
 /* play again modal */
