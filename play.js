@@ -76,7 +76,6 @@ playAgainButton.addEventListener('click', () => {
     playerScore = 0;
     compScore = 0;
     roundExplanation.innerText = 'First to score 5 points wins the game';
-    result.style.fontSize = '26px';
     result.innerText = 'Choose your weapon';
     playerScoreDisplay.innerText = `You: 0`;
     compScoreDisplay.innerText = `Computer: 0`;
@@ -118,7 +117,6 @@ moves.forEach((move) => {
         compScoreDisplay.innerText = `Computer: ${compScore}`;
         
         if(playerScore === 5 || compScore === 5) {
-            result.style.fontSize = '30px';
             // display the winner(if there is one) of five rounds
             if(playerScore > compScore){
                 result.innerText = `Congrats you won ${playerScore} to ${compScore}`;
