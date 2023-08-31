@@ -65,15 +65,18 @@ const playerAddPoint = document.querySelector('.player.add-point');
 const themeLight = document.querySelector('.light.theme');
 const themeDark = document.querySelector('.dark.theme');
 
-
-themeLight.addEventListener('click', () => {
+function lightToDark() {
     themeLight.style.display = 'none';
     themeDark.style.display = 'block';
-});
-themeDark.addEventListener('click', () => {
+}
+
+function darkToLIght() {
     themeLight.style.display = 'block';
     themeDark.style.display = 'none';
-});
+}
+
+themeLight.addEventListener('click', lightToDark);
+themeDark.addEventListener('click', darkToLIght);
 
 // initialize both scores to 0
 let playerScore = 0;

@@ -145,3 +145,26 @@ h4 {
 .dark.theme:hover {
     font-size: 70px;
 }
+
+
+/* theme classes light */
+.light-c {
+    color: white;
+}
+.light-bg {
+    background-color: white;
+}
+.light-b {
+    border-color: white;
+}
+
+/* theme classes dark */
+.dark-c {
+    color: black;
+}
+.dark-bg {
+    background-color: black;
+}
+.dark-b {
+    border-color: black;
+}
