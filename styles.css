@@ -23,7 +23,9 @@ body {
     font-family: "Major Mono Display", sans-serif;
     font-size: 50px;
     margin-top: 10px;
-   
+}
+.rock-emoji {
+    font-weight: 400;
 }
 .heading-text {
     border-bottom: dashed 6px;
@@ -52,7 +54,12 @@ h4 {
 }
 .option:hover {
     background-color: rgb(118, 119, 119);
+}
+.option.dark-bg:hover {
     color: black;
+}
+.option.light-bg:hover {
+    color: white;
 }
 
 /* play again modal */
@@ -76,13 +83,18 @@ h4 {
     border-radius: 10px;
     font-weight: 600;
     font-size: 20px;
-    border: dashed 2px;
-    transition: all 0.1s ease;
+    border: dashed 3px;
+    transition: all 0.2s ease;
 
 }
 #play-again-button:hover {
     background-color: rgb(118, 119, 119);
+}
+#play-again-button.light-bg:hover {
     color:rgb(229, 229, 229);
+}
+#play-again-button.dark-bg:hover {
+    color:black;
 }
 
 
