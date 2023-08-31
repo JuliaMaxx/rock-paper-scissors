@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
+    transition:all 0.2s;
 }
 
 #main {
