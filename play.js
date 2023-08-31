@@ -62,18 +62,52 @@ const main = document.getElementById('main');
 const playAgainText = document.getElementById('play-again-text');
 const compAddPoint = document.querySelector('.comp.add-point');
 const playerAddPoint = document.querySelector('.player.add-point');
-const themeLight = document.querySelector('.light-btn.theme');
-const themeDark = document.querySelector('.dark-btn.theme');
+const themeLight = document.querySelector('.lightBtn.theme');
+const themeDark = document.querySelector('.darkBtn.theme');
+const changeableElements = document.querySelectorAll('.change');
 
 function lightToDark() {
     themeLight.style.display = 'none';
     themeDark.style.display = 'block';
+    changeableElements.forEach((element) => {
+        const classes = Array.from(element.classList);
+        for (const cls of classes){
+            if(/^light-/.test(cls)){
+                let newCls = cls.replace(/^light-/, 'dark-');
+                element.classList.remove(cls);
+                element.classList.add(newCls);
+            }
+            else if(/^dark-/.test(cls)){
+                let newCls = cls.replace(/^dark-/, 'light-');
+                element.classList.remove(cls);
+                element.classList.add(newCls);
+            }
+
+        }
+    })
 }
 
 function darkToLIght() {
     themeLight.style.display = 'block';
     themeDark.style.display = 'none';
+    changeableElements.forEach((element) => {
+        const classes = Array.from(element.classList);
+        for (const cls of classes){
+            if(/^light-/.test(cls)){
+                let newCls = cls.replace(/^light-/, 'dark-');
+                element.classList.remove(cls);
+                element.classList.add(newCls);
+            }
+            else if(/^dark-/.test(cls)){
+                let newCls = cls.replace(/^dark-/, 'light-');
+                element.classList.remove(cls);
+                element.classList.add(newCls);
+            }
+
+        }
+    })
 }
+
 
 themeLight.addEventListener('click', lightToDark);
 themeDark.addEventListener('click', darkToLIght);
