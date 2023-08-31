@@ -60,6 +60,9 @@ const playerMoveEmojiDisplay = document.getElementById('player-move-emoji');
 const compMoveEmojiDisplay = document.getElementById('comp-move-emoji');
 const main = document.getElementById('main');
 const playAgainText = document.getElementById('play-again-text');
+const compAddPoint = document.querySelector('.comp.add-point');
+const playerAddPoint = document.querySelector('.player.add-point');
+
 
 // initialize both scores to 0
 let playerScore = 0;
@@ -67,6 +70,8 @@ let compScore = 0;
 
 playAgainButton.addEventListener('click', () => {
     // reset everything to the initial values
+    compAddPoint.style.opacity = '0';
+    playerAddPoint.style.opacity = '0';
     moves.forEach(move => move.disabled=false);
     playerScore = 0;
     compScore = 0;
@@ -85,6 +90,8 @@ moves.forEach((move) => {
         const text = playRound(move.dataset.option, getComputerChoice()).split('!')
         result.innerText = text[0] + '!';
         roundExplanation.innerText = text[1]
+        compAddPoint.style.opacity = '0';
+        playerAddPoint.style.opacity = '0';
 
         const roundMoves = text[1].split(' ')
         const playerMoveEmoji = emojis[roundMoves[1]];
@@ -95,9 +102,13 @@ moves.forEach((move) => {
         // record the score
         if (result.innerText.includes('You win')) {
             playAgainText.innerText = "You won! Good gob!";
+            compAddPoint.style.opacity = '0';
+            playerAddPoint.style.opacity = '1';
             ++playerScore;
         }
         else if(result.innerText.includes('Computer wins')) {
+            compAddPoint.style.opacity = '1';
+            playerAddPoint.style.opacity = '0';
             playAgainText.innerText = "Lost this time :("
             ++compScore;
         }

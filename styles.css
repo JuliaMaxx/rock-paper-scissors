@@ -77,6 +77,28 @@ h4 {
 
 
 /* emojis */
+.emoji-wrapper {
+    position:relative;
+}
+.add-point {
+    opacity: 0;
+    position:absolute;
+    right: -20px;
+    background-color: black;
+    color:white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.comp.add-point {
+    right: 0px;
+}
+.player.add-point {
+    right: -20px;
+}
 .emoji {
     font-size: 100px;
 }
