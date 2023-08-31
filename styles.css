@@ -11,6 +11,7 @@ body {
 #main {
     height: 80vh;
     display: flex;
+    margin-top: -10px;
     gap: 50px;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +21,13 @@ body {
 /* headings */
 .heading {
     font-family: "Major Mono Display", sans-serif;
-    font-size: 40px;
+    font-size: 50px;
+    margin-top: 10px;
+   
+}
+.heading-text {
+    border-bottom: dashed 6px black;
+    padding-bottom: 25px;
 }
 
 h4 {
@@ -60,7 +67,7 @@ h4 {
     font-weight: 600;
     font-size: 20px;
     border: dashed 2px white;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 
 }
 #play-again-button:hover {
