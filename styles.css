@@ -123,3 +123,15 @@ h4 {
 .emoji {
     font-size: 100px;
 }
+
+/* theme */
+.theme {
+    position: absolute;
+    font-size: 80px;
+    right: 140px;
+    top: 5px;
+    transition: all 0.1s;
+}
+.theme:hover {
+    font-size: 90px;
+}
