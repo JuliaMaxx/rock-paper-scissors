@@ -8,7 +8,6 @@ body {
     box-sizing: border-box;
     transition:all 0.2s;
 }
-
 #main {
     height: 80vh;
     display: flex;
@@ -32,7 +31,6 @@ body {
     border-bottom: dashed 6px;
     padding-bottom: 25px;
 }
-
 h4 {
     font-weight: 800;
     font-size: 30px;
@@ -48,8 +46,6 @@ h4 {
     height: 150px;
     font-size: 100px;
     border-radius: 20px;
-    /* background-color: black;
-    color:white; */
     border: 3px dashed ;
     transition: all 0.1s;
 }
@@ -68,8 +64,6 @@ h4 {
     opacity: 0%;
     position: absolute;
     align-self: center;
-    /* background-color: black; */
-    /* color: white; */
     padding: 60px;
     font-size: 30px;
     border-radius: 20px;
@@ -79,7 +73,6 @@ h4 {
 #play-again-button {
     margin-top: 30px;
     padding: 10px 30px;
-    /* background-color: white; */
     border: unset;
     border-radius: 10px;
     font-weight: 600;
@@ -98,7 +91,6 @@ h4 {
     color:black;
 }
 
-
 /* scores */
 #score {
     display:flex;
@@ -109,7 +101,6 @@ h4 {
     font-size: 20px;
 }
 
-
 /* emojis */
 .emoji-wrapper {
     position:relative;
@@ -118,8 +109,6 @@ h4 {
     opacity: 0;
     position:absolute;
     right: -20px;
-    /* background-color: black; */
-    /* color:white; */
     width: 20px;
     height: 20px;
     display: flex;
@@ -137,7 +126,7 @@ h4 {
     font-size: 100px;
 }
 
-/* theme */
+/* themes */
 .theme {
     position: absolute;
     right: 140px;
@@ -160,7 +149,6 @@ h4 {
 .darkBtn.theme:hover {
     font-size: 70px;
 }
-
 
 /* theme classes light */
 .light-c {
