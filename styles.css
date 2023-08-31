@@ -127,11 +127,21 @@ h4 {
 /* theme */
 .theme {
     position: absolute;
-    font-size: 80px;
     right: 140px;
-    top: 5px;
     transition: all 0.1s;
 }
-.theme:hover {
+.light.theme {
+    font-size: 80px;
+    top: 5px;
+}
+.light.theme:hover {
     font-size: 90px;
+}
+.dark.theme {
+    display:none;
+    font-size: 60px;
+    top: 15px;
+}
+.dark.theme:hover {
+    font-size: 70px;
 }

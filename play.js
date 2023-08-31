@@ -62,7 +62,18 @@ const main = document.getElementById('main');
 const playAgainText = document.getElementById('play-again-text');
 const compAddPoint = document.querySelector('.comp.add-point');
 const playerAddPoint = document.querySelector('.player.add-point');
+const themeLight = document.querySelector('.light.theme');
+const themeDark = document.querySelector('.dark.theme');
 
+
+themeLight.addEventListener('click', () => {
+    themeLight.style.display = 'none';
+    themeDark.style.display = 'block';
+});
+themeDark.addEventListener('click', () => {
+    themeLight.style.display = 'block';
+    themeDark.style.display = 'none';
+});
 
 // initialize both scores to 0
 let playerScore = 0;
