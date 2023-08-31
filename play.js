@@ -66,9 +66,7 @@ const themeLight = document.querySelector('.lightBtn.theme');
 const themeDark = document.querySelector('.darkBtn.theme');
 const changeableElements = document.querySelectorAll('.change');
 
-function lightToDark() {
-    themeLight.style.display = 'none';
-    themeDark.style.display = 'block';
+function changeThemes() {
     changeableElements.forEach((element) => {
         const classes = Array.from(element.classList);
         for (const cls of classes){
@@ -87,25 +85,16 @@ function lightToDark() {
     })
 }
 
+function lightToDark() {
+    themeLight.style.display = 'none';
+    themeDark.style.display = 'block';
+    changeThemes();
+}
+
 function darkToLIght() {
     themeLight.style.display = 'block';
     themeDark.style.display = 'none';
-    changeableElements.forEach((element) => {
-        const classes = Array.from(element.classList);
-        for (const cls of classes){
-            if(/^light-/.test(cls)){
-                let newCls = cls.replace(/^light-/, 'dark-');
-                element.classList.remove(cls);
-                element.classList.add(newCls);
-            }
-            else if(/^dark-/.test(cls)){
-                let newCls = cls.replace(/^dark-/, 'light-');
-                element.classList.remove(cls);
-                element.classList.add(newCls);
-            }
-
-        }
-    })
+    changeThemes();
 }
 
 
