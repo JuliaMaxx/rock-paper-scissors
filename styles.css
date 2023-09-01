@@ -134,7 +134,6 @@ h4 {
 }
 .lightBtn.theme {
     font-size: 80px;
-    top: 5px;
     color:black;
 }
 .lightBtn.theme:hover {
@@ -143,12 +142,26 @@ h4 {
 .darkBtn.theme {
     display:none;
     font-size: 60px;
-    top: 15px;
     color:white;
 }
 .darkBtn.theme:hover {
     font-size: 70px;
 }
+
+@media(max-width: 1000px) {
+    .theme { 
+        right: 25px;
+    }   
+}
+@media(min-width: 1000px) {
+    .lightBtn.theme { 
+        top: 5px;    
+    }
+    .darkBtn.theme {
+        top: 15px;
+    }
+}
+
 
 /* theme classes light */
 .light-c {
