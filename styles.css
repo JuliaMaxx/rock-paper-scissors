@@ -23,6 +23,7 @@ body {
     font-family: "Major Mono Display", sans-serif;
     font-size: 50px;
     margin-top: 10px;
+    line-height: 90px;
 }
 .rock-emoji {
     font-weight: 400;
@@ -183,4 +184,24 @@ h4 {
 }
 .dark-b {
     border-color: black;
+}
+
+
+
+@media(max-width: 700px) {
+    .heading-text {
+        font-size: 45px;
+    }
+    h4 {
+        font-size: 40px;
+    }
+    #explanation, #player-score, #comp-score {
+        font-size: 27px;
+    }
+    .add-point {
+        font-size: 20px;
+    }
+    #play-again-button {
+        font-size: 30px;
+    }
 }
